@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Car, Heart, Menu, Phone, X } from "lucide-react";
+import { Car, Heart, Menu, Moon, Phone, Sun, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useFavorites } from "@/components/favorites-provider";
+import { useTheme } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
-
 
 const navItems = [
   { label: "Beranda", href: "#beranda" },
@@ -18,12 +18,12 @@ const navItems = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const { count, setActiveTab } = useFavorites();
-
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/70 bg-background/90 backdrop-blur">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <Link to="/" className="flex items-center gap-3">
+      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <Link to="/" className="flex shrink-0 items-center gap-3">
           <span className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
             <Car className="size-5" strokeWidth={1.75} />
           </span>
@@ -35,7 +35,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-4 xl:gap-7 lg:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -43,14 +43,14 @@ export function SiteHeader() {
               onClick={() => {
                 if (item.href === "#armada") setActiveTab("all");
               }}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-secondary"
+              className="whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors hover:text-secondary"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
           <a
             href="#armada"
             onClick={() => setActiveTab("favorites")}
@@ -64,14 +64,28 @@ export function SiteHeader() {
               </span>
             )}
           </a>
-          <div className="hidden items-center gap-3 lg:flex">
-            <Button variant="outlineBrand" size="lg" asChild>
+
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Aktifkan Mode Terang" : "Aktifkan Mode Gelap"}
+            className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-border text-primary transition-colors hover:border-secondary hover:text-secondary"
+          >
+            {theme === "dark" ? (
+              <Sun className="size-5 text-amber-400 fill-amber-400/20" />
+            ) : (
+              <Moon className="size-5 text-primary" />
+            )}
+          </button>
+
+          <div className="hidden items-center gap-2.5 xl:gap-3 lg:flex">
+            <Button variant="outlineBrand" size="lg" className="whitespace-nowrap px-3.5 xl:px-6" asChild>
               <a href="tel:+6281234567890">
                 <Phone className="size-4" strokeWidth={1.75} />
                 Hubungi Kami
               </a>
             </Button>
-            <Button variant="brand" size="lg" asChild>
+            <Button variant="brand" size="lg" className="whitespace-nowrap px-3.5 xl:px-6" asChild>
               <a href="#pesan">Pesan Sekarang</a>
             </Button>
           </div>
@@ -85,7 +99,6 @@ export function SiteHeader() {
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </div>
-
       </div>
 
       {open && (
@@ -99,7 +112,7 @@ export function SiteHeader() {
                   setOpen(false);
                   if (item.href === "#armada") setActiveTab("all");
                 }}
-                className="rounded-xl px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="whitespace-nowrap rounded-xl px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 {item.label}
               </a>

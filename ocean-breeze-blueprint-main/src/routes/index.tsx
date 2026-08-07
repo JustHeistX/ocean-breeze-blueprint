@@ -6,6 +6,8 @@ import { Hero } from "@/components/hero";
 import { FleetSection } from "@/components/fleet-section";
 import { BookingSection } from "@/components/booking-section";
 import { AboutSection } from "@/components/about-section";
+import { AreaSection } from "@/components/area-section";
+import { FaqSection } from "@/components/faq-section";
 import { FavoritesProvider } from "@/components/favorites-provider";
 
 import { getCars } from "@/lib/cars.functions";
@@ -55,6 +57,8 @@ function Index() {
             onSelectCarId={setSelectedCarId}
           />
           <AboutSection />
+          <AreaSection />
+          <FaqSection />
         </main>
 
         <SiteFooter />

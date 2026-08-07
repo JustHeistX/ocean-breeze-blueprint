@@ -3,9 +3,10 @@ import { Car, Mail, MapPin, MessageCircle } from "lucide-react";
 const quickLinks = [
   { label: "Beranda", href: "#beranda" },
   { label: "Armada", href: "#armada" },
+  { label: "Pemesanan", href: "#pesan" },
+  { label: "Tentang Kami", href: "#tentang" },
   { label: "Area Layanan", href: "#area" },
-  { label: "Syarat & Ketentuan", href: "#syarat" },
-  { label: "Kontak", href: "#kontak" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function SiteFooter() {
