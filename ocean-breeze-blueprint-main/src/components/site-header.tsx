@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Beranda", href: "/#beranda", isRoute: false },
-  { label: "Armada", href: "/armada", isRoute: true },
+  { label: "Armada", href: "/#armada", isRoute: false },
   { label: "Pemesanan", href: "/#pesan", isRoute: false },
   { label: "Tentang Kami", href: "/tentang-kami", isRoute: true },
   { label: "Area Layanan", href: "/area-layanan", isRoute: true },

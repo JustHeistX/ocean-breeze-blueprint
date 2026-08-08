@@ -2,7 +2,7 @@ import { Car, Mail, MapPin, MessageCircle } from "lucide-react";
 
 const quickLinks = [
   { label: "Beranda", href: "/#beranda" },
-  { label: "Armada", href: "/armada" },
+  { label: "Armada", href: "/#armada" },
   { label: "Pemesanan", href: "/#pesan" },
   { label: "Tentang Kami", href: "/tentang-kami" },
   { label: "Area Layanan", href: "/area-layanan" },

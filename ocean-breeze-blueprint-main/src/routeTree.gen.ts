@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AreaLayananRouteImport } from './routes/area-layanan'
-import { Route as ArmadaRouteImport } from './routes/armada'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as TentangKamiRouteImport } from './routes/tentang-kami'
 
@@ -23,11 +22,6 @@ const IndexRoute = IndexRouteImport.update({
 const AreaLayananRoute = AreaLayananRouteImport.update({
   id: '/area-layanan',
   path: '/area-layanan',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ArmadaRoute = ArmadaRouteImport.update({
-  id: '/armada',
-  path: '/armada',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -44,14 +38,12 @@ const TentangKamiRoute = TentangKamiRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/area-layanan': typeof AreaLayananRoute
-  '/armada': typeof ArmadaRoute
   '/faq': typeof FaqRoute
   '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/area-layanan': typeof AreaLayananRoute
-  '/armada': typeof ArmadaRoute
   '/faq': typeof FaqRoute
   '/tentang-kami': typeof TentangKamiRoute
 }
@@ -59,22 +51,20 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/area-layanan': typeof AreaLayananRoute
-  '/armada': typeof ArmadaRoute
   '/faq': typeof FaqRoute
   '/tentang-kami': typeof TentangKamiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/area-layanan' | '/armada' | '/faq' | '/tentang-kami'
+  fullPaths: '/' | '/area-layanan' | '/faq' | '/tentang-kami'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/area-layanan' | '/armada' | '/faq' | '/tentang-kami'
-  id: '__root__' | '/' | '/area-layanan' | '/armada' | '/faq' | '/tentang-kami'
+  to: '/' | '/area-layanan' | '/faq' | '/tentang-kami'
+  id: '__root__' | '/' | '/area-layanan' | '/faq' | '/tentang-kami'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AreaLayananRoute: typeof AreaLayananRoute
-  ArmadaRoute: typeof ArmadaRoute
   FaqRoute: typeof FaqRoute
   TentangKamiRoute: typeof TentangKamiRoute
 }
@@ -93,13 +83,6 @@ declare module '@tanstack/react-router' {
       path: '/area-layanan'
       fullPath: '/area-layanan'
       preLoaderRoute: typeof AreaLayananRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/armada': {
-      id: '/armada'
-      path: '/armada'
-      fullPath: '/armada'
-      preLoaderRoute: typeof ArmadaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -122,7 +105,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AreaLayananRoute: AreaLayananRoute,
-  ArmadaRoute: ArmadaRoute,
   FaqRoute: FaqRoute,
   TentangKamiRoute: TentangKamiRoute,
 }
