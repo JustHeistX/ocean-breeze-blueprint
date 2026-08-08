@@ -1,5 +1,7 @@
+import { Link } from "@tanstack/react-router";
 import { Building2, CheckCircle2, MapPin, Navigation, Plane, ShieldCheck } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const subDistricts = [
   { name: "Wonogiri Kota", note: "Pusat Kota & Area Stasiun" },
@@ -125,6 +127,16 @@ export function AreaSection() {
               </Card>
             ))}
           </div>
+        </div>
+
+        {/* Button link to full area page */}
+        <div className="mt-12 text-center">
+          <Button variant="outlineBrand" size="lg" className="rounded-xl px-8 font-semibold shadow-sm" asChild>
+            <Link to="/area-layanan">
+              Lihat Selengkapnya Area Layanan
+              <Navigation className="ml-2 size-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

@@ -7,12 +7,12 @@ import { useTheme } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Beranda", href: "#beranda" },
-  { label: "Armada", href: "#armada" },
-  { label: "Pemesanan", href: "#pesan" },
-  { label: "Tentang Kami", href: "#tentang" },
-  { label: "Area Layanan", href: "#area" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Beranda", href: "/#beranda", isRoute: false },
+  { label: "Armada", href: "/armada", isRoute: true },
+  { label: "Pemesanan", href: "/#pesan", isRoute: false },
+  { label: "Tentang Kami", href: "/tentang-kami", isRoute: true },
+  { label: "Area Layanan", href: "/area-layanan", isRoute: true },
+  { label: "FAQ", href: "/faq", isRoute: true },
 ];
 
 export function SiteHeader() {
@@ -36,23 +36,33 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-4 xl:gap-7 lg:flex">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => {
-                if (item.href === "#armada") setActiveTab("all");
-              }}
-              className="whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors hover:text-secondary"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.isRoute ? (
+              <Link
+                key={item.href}
+                to={item.href}
+                className="whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors hover:text-secondary [&.active]:text-secondary [&.active]:font-semibold"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => {
+                  if (item.href.includes("armada")) setActiveTab("all");
+                }}
+                className="whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors hover:text-secondary"
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </nav>
 
         <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
           <a
-            href="#armada"
+            href="/#armada"
             onClick={() => setActiveTab("favorites")}
             aria-label={`Favorit saya (${count} mobil)`}
             className="relative flex size-10 shrink-0 items-center justify-center rounded-xl border border-border text-primary transition-colors hover:border-secondary hover:text-secondary"
@@ -86,7 +96,7 @@ export function SiteHeader() {
               </a>
             </Button>
             <Button variant="brand" size="lg" className="whitespace-nowrap px-3.5 xl:px-6" asChild>
-              <a href="#pesan">Pesan Sekarang</a>
+              <a href="/#pesan">Pesan Sekarang</a>
             </Button>
           </div>
 
@@ -104,21 +114,32 @@ export function SiteHeader() {
       {open && (
         <div className="border-t border-border bg-background lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => {
-                  setOpen(false);
-                  if (item.href === "#armada") setActiveTab("all");
-                }}
-                className="whitespace-nowrap rounded-xl px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) =>
+              item.isRoute ? (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  onClick={() => setOpen(false)}
+                  className="whitespace-nowrap rounded-xl px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => {
+                    setOpen(false);
+                    if (item.href.includes("armada")) setActiveTab("all");
+                  }}
+                  className="whitespace-nowrap rounded-xl px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
             <Button variant="brand" size="lg" className="mt-3" asChild>
-              <a href="#pesan" onClick={() => setOpen(false)}>
+              <a href="/#pesan" onClick={() => setOpen(false)}>
                 Pesan Sekarang
               </a>
             </Button>

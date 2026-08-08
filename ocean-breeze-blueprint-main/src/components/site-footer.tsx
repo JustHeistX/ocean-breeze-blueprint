@@ -1,12 +1,12 @@
 import { Car, Mail, MapPin, MessageCircle } from "lucide-react";
 
 const quickLinks = [
-  { label: "Beranda", href: "#beranda" },
-  { label: "Armada", href: "#armada" },
-  { label: "Pemesanan", href: "#pesan" },
-  { label: "Tentang Kami", href: "#tentang" },
-  { label: "Area Layanan", href: "#area" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Beranda", href: "/#beranda" },
+  { label: "Armada", href: "/armada" },
+  { label: "Pemesanan", href: "/#pesan" },
+  { label: "Tentang Kami", href: "/tentang-kami" },
+  { label: "Area Layanan", href: "/area-layanan" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export function SiteFooter() {

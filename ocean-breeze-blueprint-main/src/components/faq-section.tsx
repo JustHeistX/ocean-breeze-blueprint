@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { HelpCircle, MessageCircle } from "lucide-react";
 import {
   Accordion,
@@ -81,7 +82,7 @@ export function FaqSection() {
           <p className="mt-2 text-sm text-muted-foreground">
             Tim layanan pelanggan kami siap melayani Anda 24 jam melalui konsultasi langsung via WhatsApp.
           </p>
-          <div className="mt-6 flex justify-center">
+          <div className="mt-6 flex flex-wrap justify-center items-center gap-3">
             <Button
               variant="brand"
               size="lg"
@@ -92,6 +93,16 @@ export function FaqSection() {
                 <MessageCircle className="size-4 fill-current" />
                 Tanya via WhatsApp
               </a>
+            </Button>
+            <Button
+              variant="outlineBrand"
+              size="lg"
+              className="inline-flex items-center gap-2 rounded-xl px-6 py-3 font-semibold"
+              asChild
+            >
+              <Link to="/faq">
+                Lihat Selengkapnya FAQ &amp; Ulasan
+              </Link>
             </Button>
           </div>
         </div>

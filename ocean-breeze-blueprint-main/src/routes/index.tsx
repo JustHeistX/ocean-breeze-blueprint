@@ -10,6 +10,8 @@ import { AreaSection } from "@/components/area-section";
 import { FaqSection } from "@/components/faq-section";
 import { FavoritesProvider } from "@/components/favorites-provider";
 
+import { TestimonialSection } from "@/components/testimonial-section";
+
 import { getCars } from "@/lib/cars.functions";
 
 export const Route = createFileRoute("/")({
@@ -59,6 +61,7 @@ function Index() {
           <AboutSection />
           <AreaSection />
           <FaqSection />
+          <TestimonialSection />
         </main>
 
         <SiteFooter />
