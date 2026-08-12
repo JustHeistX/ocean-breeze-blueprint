@@ -28,10 +28,10 @@ export function SiteHeader() {
             <Car className="size-5" strokeWidth={1.75} />
           </span>
           <span className="leading-tight">
-            <span className="block font-display text-base font-bold text-primary">
+            <span className="block font-display text-sm font-bold text-primary sm:text-base">
               Rental Mobil Sahabat
             </span>
-            <span className="block text-xs text-muted-foreground">Wonogiri, Jawa Tengah</span>
+            <span className="hidden text-xs text-muted-foreground sm:block">Wonogiri, Jawa Tengah</span>
           </span>
         </Link>
 
@@ -138,7 +138,7 @@ export function SiteHeader() {
                 </a>
               )
             )}
-            <Button variant="brand" size="lg" className="mt-3" asChild>
+            <Button variant="brand" size="lg" className="mt-3 w-full" asChild>
               <a href="/#pesan" onClick={() => setOpen(false)}>
                 Pesan Sekarang
               </a>

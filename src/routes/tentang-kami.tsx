@@ -173,14 +173,14 @@ function TentangKamiPage() {
                     serta pelayanan profesional untuk wisatawan, acara keluarga, dan kunjungan bisnis.
                   </p>
 
-                  <div className="mt-8 flex flex-wrap items-center gap-4">
-                    <Button variant="brand" size="lg" asChild>
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                    <Button variant="brand" size="lg" className="w-full sm:w-auto" asChild>
                       <a href="/#pesan">
                         <Car className="size-4 mr-2" />
                         Pesan Armada Sekarang
                       </a>
                     </Button>
-                    <Button variant="outlineBrand" size="lg" asChild>
+                    <Button variant="outlineBrand" size="lg" className="w-full sm:w-auto" asChild>
                       <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
                         <MessageCircle className="size-4 mr-2" />
                         Konsultasi Perjalanan
@@ -190,7 +190,7 @@ function TentangKamiPage() {
                 </div>
 
                 <div className="lg:col-span-5">
-                  <div className="relative mx-auto max-w-md rounded-2xl border border-border/80 bg-card p-6 shadow-xl backdrop-blur">
+                  <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl border border-border/80 bg-card p-6 shadow-xl backdrop-blur mt-8 lg:mt-0">
                     <div className="absolute -top-4 -right-4 flex size-12 items-center justify-center rounded-2xl bg-secondary text-secondary-foreground shadow-lg">
                       <Award className="size-6" />
                     </div>
@@ -413,7 +413,9 @@ function TentangKamiPage() {
                 {statsData.map((stat, idx) => (
                   <div
                     key={idx}
-                    className={`flex flex-col items-center text-center ${idx !== 0 ? "pt-6 sm:pt-0 sm:pl-6" : ""}`}
+                    className={`flex flex-col items-center text-center ${
+                      idx !== 0 ? "pt-6 sm:pt-0 sm:pl-6 lg:pl-8" : ""
+                    }`}
                   >
                     <span className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
                       {stat.value}
@@ -438,14 +440,14 @@ function TentangKamiPage() {
                     Hubungi tim kami sekarang untuk booking armada impian Anda atau konsultasi rute terbaik di Wonogiri.
                   </p>
                 </div>
-                <div className="flex flex-wrap items-center gap-3 shrink-0">
-                  <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center shrink-0">
+                  <Button variant="secondary" size="lg" className="w-full sm:w-auto bg-white text-primary hover:bg-white/90" asChild>
                     <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="size-4 mr-2" />
                       Chat WhatsApp
                     </a>
                   </Button>
-                  <Button variant="outlineBrand" size="lg" className="border-white text-white hover:bg-white/10" asChild>
+                  <Button variant="outlineBrand" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white/10" asChild>
                     <a href="/#pesan">
                       Pesan via Form
                     </a>

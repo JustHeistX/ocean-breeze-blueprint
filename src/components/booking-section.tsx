@@ -153,7 +153,7 @@ export function BookingSection({ cars, selectedCarId, onSelectCarId }: BookingSe
                   className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2"
                 >
                   <label
-                    className={`flex cursor-pointer items-center justify-between rounded-xl border p-4 transition-all ${
+                    className={`flex cursor-pointer items-center justify-between gap-2 rounded-xl border p-4 transition-all ${
                       serviceType === "Lepas Kunci"
                         ? "border-secondary bg-accent/50 ring-1 ring-secondary"
                         : "border-border bg-background hover:bg-accent/20"
@@ -170,7 +170,7 @@ export function BookingSection({ cars, selectedCarId, onSelectCarId }: BookingSe
                   </label>
 
                   <label
-                    className={`flex cursor-pointer items-center justify-between rounded-xl border p-4 transition-all ${
+                    className={`flex cursor-pointer items-center justify-between gap-2 rounded-xl border p-4 transition-all ${
                       serviceType === "Dengan Sopir"
                         ? "border-secondary bg-accent/50 ring-1 ring-secondary"
                         : "border-border bg-background hover:bg-accent/20"
@@ -293,7 +293,7 @@ export function BookingSection({ cars, selectedCarId, onSelectCarId }: BookingSe
                   <span className="block text-xs uppercase tracking-wider text-primary-foreground/70">
                     Estimasi Total Harga
                   </span>
-                  <span className="mt-1 block text-3xl font-extrabold text-white">
+                  <span className="mt-1 block text-2xl font-extrabold text-white sm:text-3xl">
                     {rupiah(grandTotal)}
                   </span>
                 </div>
@@ -308,7 +308,8 @@ export function BookingSection({ cars, selectedCarId, onSelectCarId }: BookingSe
               >
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="size-5 fill-current" />
-                  Pesan Sekarang via WhatsApp
+                  <span className="hidden sm:inline">Pesan Sekarang via WhatsApp</span>
+                  <span className="sm:hidden">Pesan via WhatsApp</span>
                 </a>
               </Button>
 

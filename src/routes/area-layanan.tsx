@@ -150,7 +150,7 @@ const intercityDestinations = [
   { city: "Solo (Surakarta)", time: "1 Jam", note: "Belanja Batik, Kuliner, Bisnis & Rumah Sakit" },
   { city: "Yogyakarta (Jogja)", time: "2.5 Jam", note: "Wisata Malioboro, Candi, & Kampus" },
   { city: "Semarang", time: "2.5 - 3 Jam", note: "Kunjungan Instansi Provinsi & Pelabuhan" },
-  { city: "Pacitan & Ponorogo", time: "1 font-semibold.5 - 2 Jam", note: "Wisata Gua, Pantai, & Kunjungan Keluarga" },
+  { city: "Pacitan & Ponorogo", time: "1.5 - 2 Jam", note: "Wisata Gua, Pantai, & Kunjungan Keluarga" },
   { city: "Surabaya & Malang", time: "4 - 5 Jam via Tol", note: "Charter Bisnis & Perjalanan Antar-Provinsi" },
   { city: "Jakarta & Bandung", time: "Flexibel / Charter", note: "Perjalanan Luar Kota Jarak Jauh + 2 Driver" },
 ];
@@ -204,22 +204,22 @@ function AreaLayananPage() {
                   Bandara YIA Yogyakarta, dan Stasiun Kereta Api.
                 </p>
 
-                <div className="mt-8 flex flex-wrap items-center gap-3">
+                <div className="mt-8 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-3">
                   <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-3.5 py-2 text-xs font-medium text-foreground shadow-sm">
                     <CheckCircle2 className="size-4 text-emerald-600" />
                     25 Kecamatan Terlayani
                   </span>
                   <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-3.5 py-2 text-xs font-medium text-foreground shadow-sm">
                     <Truck className="size-4 text-primary" />
-                    Antar-Jemput Rumah / Hotel
+                    Antar-Jemput Lokasi
                   </span>
                   <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-3.5 py-2 text-xs font-medium text-foreground shadow-sm">
                     <Plane className="size-4 text-secondary" />
-                    Shuttle Bandara Solo &amp; YIA
+                    Shuttle Bandara
                   </span>
                   <span className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-3.5 py-2 text-xs font-medium text-foreground shadow-sm">
                     <Clock className="size-4 text-amber-500" />
-                    Layanan 24 Jam Nonstop
+                    Layanan 24 Jam
                   </span>
                 </div>
               </div>
@@ -352,7 +352,7 @@ function AreaLayananPage() {
                       key={idx}
                       className="relative overflow-hidden rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-lg"
                     >
-                      <div className="flex items-center justify-between gap-2">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
                         <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary/10 px-3 py-1 text-xs font-semibold text-secondary">
                           <Icon className="size-3.5" />
                           {service.type}
@@ -485,14 +485,14 @@ function AreaLayananPage() {
                       Tim customer service kami siap menjawab pertanyaan lokasi &amp; jadwal sewa Anda 24 jam nonstop.
                     </p>
                   </div>
-                  <div className="flex flex-wrap items-center gap-3 shrink-0">
-                    <Button variant="brand" size="lg" asChild>
+                  <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center shrink-0">
+                    <Button variant="brand" size="lg" className="w-full sm:w-auto" asChild>
                       <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
                         <MessageCircle className="size-4 mr-2" />
                         Tanya via WhatsApp
                       </a>
                     </Button>
-                    <Button variant="outlineBrand" size="lg" asChild>
+                    <Button variant="outlineBrand" size="lg" className="w-full sm:w-auto" asChild>
                       <a href="/#pesan">
                         Form Pemesanan
                       </a>

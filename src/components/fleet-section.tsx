@@ -233,7 +233,7 @@ export function FleetSection({
                         </li>
                       </ul>
 
-                      <div className="mt-5 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
+                      <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <p className="min-w-0">
                           <span className="block truncate text-lg font-bold text-primary">
                             {rupiah(Number(car.price_per_day))}
@@ -244,6 +244,7 @@ export function FleetSection({
                           variant="brand"
                           disabled={!car.availability_status}
                           asChild={car.availability_status}
+                          className="w-full sm:w-auto"
                         >
                           {car.availability_status ? (
                             <a href="#pesan" onClick={() => onSelectCarId?.(car.id)}>

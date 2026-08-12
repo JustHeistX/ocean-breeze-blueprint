@@ -12,7 +12,7 @@ const quickLinks = [
 export function SiteFooter() {
   return (
     <footer id="kontak" className="bg-primary text-primary-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-3 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-14 md:grid-cols-3 md:gap-10 lg:px-8">
         <div>
           <div className="flex items-center gap-3">
             <span className="flex size-10 items-center justify-center rounded-xl bg-primary-foreground/12 ring-1 ring-primary-foreground/20">
@@ -26,7 +26,7 @@ export function SiteFooter() {
           </p>
         </div>
 
-        <div>
+        <div className="border-t border-primary-foreground/15 pt-6 md:border-t-0 md:pt-0">
           <h3 className="text-sm font-semibold uppercase tracking-wide">Quick Links</h3>
           <ul className="mt-4 space-y-2.5">
             {quickLinks.map((link) => (
@@ -42,7 +42,7 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div>
+        <div className="border-t border-primary-foreground/15 pt-6 md:border-t-0 md:pt-0">
           <h3 className="text-sm font-semibold uppercase tracking-wide">Kontak</h3>
           <ul className="mt-4 space-y-3 text-sm text-primary-foreground/75">
             <li>
@@ -50,21 +50,21 @@ export function SiteFooter() {
                 href="https://wa.me/6281234567890"
                 className="flex items-center gap-2.5 transition-colors hover:text-primary-foreground"
               >
-                <MessageCircle className="size-4" strokeWidth={1.75} />
+                <MessageCircle className="size-4 shrink-0" strokeWidth={1.75} />
                 WhatsApp: 0812-3456-7890
               </a>
             </li>
             <li>
               <a
                 href="mailto:halo@rentalmobilsahabat.id"
-                className="flex items-center gap-2.5 transition-colors hover:text-primary-foreground"
+                className="flex items-start gap-2.5 transition-colors hover:text-primary-foreground"
               >
-                <Mail className="size-4" strokeWidth={1.75} />
-                halo@rentalmobilsahabat.id
+                <Mail className="size-4 shrink-0 mt-0.5" strokeWidth={1.75} />
+                <span className="break-all">halo@rentalmobilsahabat.id</span>
               </a>
             </li>
             <li className="flex items-center gap-2.5">
-              <MapPin className="size-4" strokeWidth={1.75} />
+              <MapPin className="size-4 shrink-0" strokeWidth={1.75} />
               Wonogiri, Jawa Tengah
             </li>
           </ul>

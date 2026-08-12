@@ -247,7 +247,7 @@ function FaqPage() {
                   Lihat juga pengalaman nyata ratusan pelanggan yang puas menggunakan Rental Mobil Sahabat.
                 </p>
 
-                <div className="mt-8 flex flex-wrap items-center gap-4">
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                   <div className="flex items-center gap-1.5 rounded-xl border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground shadow-sm">
                     <Star className="size-4 fill-amber-400 text-amber-400" />
                     <span><strong>4.9 / 5.0</strong> Rating Kepuasan (500+ Ulasan)</span>
@@ -360,14 +360,14 @@ function FaqPage() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-center gap-3">
-                  <span className="rounded-full bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-600 border border-emerald-500/20">
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
+                  <span className="rounded-full bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-600 border border-emerald-500/20 text-center">
                     ✓ Kebersihan 100% Terjaga
                   </span>
-                  <span className="rounded-full bg-blue-500/10 px-3.5 py-1.5 text-xs font-semibold text-primary border border-blue-500/20">
+                  <span className="rounded-full bg-blue-500/10 px-3.5 py-1.5 text-xs font-semibold text-primary border border-blue-500/20 text-center">
                     ✓ Driver On-Time
                   </span>
-                  <span className="rounded-full bg-purple-500/10 px-3.5 py-1.5 text-xs font-semibold text-purple-600 border border-purple-500/20">
+                  <span className="rounded-full bg-purple-500/10 px-3.5 py-1.5 text-xs font-semibold text-purple-600 border border-purple-500/20 text-center">
                     ✓ Tanpa Hidden Fees
                   </span>
                 </div>
@@ -447,18 +447,19 @@ function FaqPage() {
                   Tim customer support kami siap melayani pertanyaan sewa, rekomendasi rute, serta simulasi harga 24 jam nonstop via WhatsApp.
                 </p>
 
-                <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
-                  <Button variant="brand" size="lg" className="px-8 font-semibold shadow-md" asChild>
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:items-center">
+                  <Button variant="brand" size="lg" className="w-full sm:w-auto px-8 font-semibold shadow-md" asChild>
                     <a
                       href="https://wa.me/6281234567890?text=Halo%20Rental%20Mobil%20Sahabat,%20saya%20ingin%20bertanya%20mengenai%20sewa%20mobil%20di%20Wonogiri"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <MessageCircle className="size-4 mr-2" />
-                      Konsultasi via WhatsApp (24 Jam)
+                      <span className="hidden sm:inline">Konsultasi via WhatsApp (24 Jam)</span>
+                      <span className="sm:hidden">Chat WhatsApp 24 Jam</span>
                     </a>
                   </Button>
-                  <Button variant="outlineBrand" size="lg" className="px-8 font-semibold" asChild>
+                  <Button variant="outlineBrand" size="lg" className="w-full sm:w-auto px-8 font-semibold" asChild>
                     <a href="/#pesan">
                       Form Pemesanan Online
                     </a>

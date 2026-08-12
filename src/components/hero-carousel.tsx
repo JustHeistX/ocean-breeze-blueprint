@@ -59,16 +59,17 @@ export function HeroCarousel() {
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {slides.map((slide, i) => (
-            <img
-              key={slide.name}
-              src={slide.src}
-              alt={slide.alt}
-              width={1408}
-              height={1008}
-              loading={i === 0 ? "eager" : "lazy"}
-              aria-hidden={i !== index}
-              className="w-full shrink-0 object-contain"
-            />
+            <div key={slide.name} className="w-full shrink-0 aspect-[4/3] sm:aspect-[16/10]">
+              <img
+                src={slide.src}
+                alt={slide.alt}
+                width={1408}
+                height={1008}
+                loading={i === 0 ? "eager" : "lazy"}
+                aria-hidden={i !== index}
+                className="h-full w-full object-cover"
+              />
+            </div>
           ))}
         </div>
 
