@@ -32,7 +32,7 @@ const serviceAreas = [
 
 export function AboutSection() {
   return (
-    <section id="tentang" className="bg-secondary/5 py-16 lg:py-24">
+    <section id="tentang" className="bg-secondary/5 py-10 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Header */}
         <div className="text-center">

@@ -33,7 +33,7 @@ const airports = [
 
 export function AreaSection() {
   return (
-    <section id="area" className="scroll-mt-20 bg-background py-16 lg:py-24">
+    <section id="area" className="scroll-mt-20 bg-background py-10 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Header */}
         <div className="text-center">
@@ -51,7 +51,7 @@ export function AreaSection() {
         </div>
 
         {/* Sub-Districts Coverage */}
-        <div className="mt-12">
+        <div className="mt-8 sm:mt-12">
           <div className="flex items-center justify-between border-b border-border/80 pb-4">
             <div className="flex items-center gap-2">
               <Building2 className="size-5 text-secondary" />
@@ -62,24 +62,24 @@ export function AreaSection() {
             </span>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {subDistricts.map((district) => (
               <Card
                 key={district.name}
-                className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-secondary/40 hover:shadow-md"
+                className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-3.5 sm:p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-secondary/40 hover:shadow-md"
               >
                 <div>
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-2 sm:gap-2.5">
                     <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-accent text-secondary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                       <Navigation className="size-3.5" />
                     </span>
-                    <h4 className="font-bold text-primary">{district.name}</h4>
+                    <h4 className="font-bold text-primary text-sm sm:text-base leading-snug">{district.name}</h4>
                   </div>
-                  <p className="mt-2 text-xs text-muted-foreground">{district.note}</p>
+                  <p className="mt-1.5 text-[11px] sm:text-xs text-muted-foreground line-clamp-2">{district.note}</p>
                 </div>
-                <div className="mt-4 flex items-center gap-1.5 text-[11px] font-medium text-emerald-600">
-                  <CheckCircle2 className="size-3.5" />
-                  Antar – Jemput Lokasi
+                <div className="mt-3 flex items-center gap-1 text-[10px] sm:text-[11px] font-medium text-emerald-600">
+                  <CheckCircle2 className="size-3 shrink-0" />
+                  Antar – Jemput
                 </div>
               </Card>
             ))}

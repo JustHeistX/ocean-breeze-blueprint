@@ -68,7 +68,7 @@ export function FleetSection({
   const visibleCars = showAll ? categoryFiltered : categoryFiltered.slice(0, 4);
 
   return (
-    <section id="armada" className="bg-secondary/5 py-16 lg:py-24">
+    <section id="armada" className="bg-secondary/5 py-10 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Section Title & Favorit Toggle */}
         <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
@@ -116,8 +116,8 @@ export function FleetSection({
           </div>
         </div>
 
-        {/* Category Filter Tabs */}
-        <div className="mt-8 flex flex-wrap items-center gap-2 border-b border-border/60 pb-4">
+        {/* Category Filter Tabs (Horizontally scrollable on mobile) */}
+        <div className="mt-8 flex items-center gap-2 overflow-x-auto no-scrollbar border-b border-border/60 pb-3">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -127,7 +127,7 @@ export function FleetSection({
                 setShowAll(false);
               }}
               className={cn(
-                "rounded-full px-4 py-1.5 text-xs font-semibold transition-all",
+                "shrink-0 rounded-full px-4 py-2 text-xs font-semibold transition-all",
                 selectedCategory === cat
                   ? "bg-secondary text-secondary-foreground shadow-sm"
                   : "bg-card text-muted-foreground border border-border hover:bg-accent hover:text-foreground",
@@ -188,7 +188,7 @@ export function FleetSection({
                         {categoryLabel}
                       </span>
 
-                      {/* Favorite Button */}
+                      {/* Favorite Button (44x44px touch target) */}
                       <button
                         type="button"
                         onClick={() => toggleFavorite(car.id)}
@@ -198,7 +198,7 @@ export function FleetSection({
                             ? `Hapus ${car.name} dari favorit`
                             : `Tambahkan ${car.name} ke favorit`
                         }
-                        className="absolute right-3 top-3 grid size-10 shrink-0 place-items-center rounded-full bg-card/90 text-primary shadow-sm backdrop-blur transition-transform hover:scale-110 active:scale-95"
+                        className="absolute right-3 top-3 grid size-11 shrink-0 place-items-center rounded-full bg-card/90 text-primary shadow-sm backdrop-blur transition-transform hover:scale-110 active:scale-95"
                       >
                         <Heart
                           className={cn(

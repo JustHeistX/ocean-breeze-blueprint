@@ -44,7 +44,7 @@ const homepageReviews = [
 
 export function TestimonialSection() {
   return (
-    <section className="bg-background py-16 lg:py-24 border-t border-border/60">
+    <section className="bg-background py-10 sm:py-16 lg:py-24 border-t border-border/60">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">

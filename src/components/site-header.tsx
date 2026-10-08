@@ -60,12 +60,20 @@ export function SiteHeader() {
           )}
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <a
+            href="tel:+6281234567890"
+            aria-label="Hubungi via Telepon"
+            className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-border text-primary transition-colors hover:border-secondary hover:text-secondary lg:hidden"
+          >
+            <Phone className="size-5 text-secondary" strokeWidth={1.75} />
+          </a>
+
           <a
             href="/#armada"
             onClick={() => setActiveTab("favorites")}
             aria-label={`Favorit saya (${count} mobil)`}
-            className="relative flex size-10 shrink-0 items-center justify-center rounded-xl border border-border text-primary transition-colors hover:border-secondary hover:text-secondary"
+            className="relative flex size-11 shrink-0 items-center justify-center rounded-xl border border-border text-primary transition-colors hover:border-secondary hover:text-secondary"
           >
             <Heart className={cn("size-5", count > 0 && "fill-secondary text-secondary")} />
             {count > 0 && (
@@ -79,7 +87,7 @@ export function SiteHeader() {
             type="button"
             onClick={toggleTheme}
             aria-label={theme === "dark" ? "Aktifkan Mode Terang" : "Aktifkan Mode Gelap"}
-            className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-border text-primary transition-colors hover:border-secondary hover:text-secondary"
+            className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-border text-primary transition-colors hover:border-secondary hover:text-secondary"
           >
             {theme === "dark" ? (
               <Sun className="size-5 text-amber-400 fill-amber-400/20" />
@@ -104,7 +112,7 @@ export function SiteHeader() {
             type="button"
             aria-label={open ? "Tutup menu" : "Buka menu"}
             onClick={() => setOpen((v) => !v)}
-            className="flex size-10 items-center justify-center rounded-xl border border-border text-primary lg:hidden"
+            className="flex size-11 items-center justify-center rounded-xl border border-border text-primary lg:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>

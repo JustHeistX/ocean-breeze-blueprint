@@ -37,7 +37,7 @@ export function FaqSection() {
   )}`;
 
   return (
-    <section id="faq" className="scroll-mt-20 bg-secondary/5 py-16 lg:py-24">
+    <section id="faq" className="scroll-mt-20 bg-secondary/5 py-10 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
         {/* Section Header */}
         <div className="text-center">

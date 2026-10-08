@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section id="beranda" className="relative overflow-hidden bg-background">
       <div className="pointer-events-none absolute -right-40 -top-40 size-[36rem] rounded-full bg-accent/70 blur-3xl" />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 py-10 sm:gap-12 sm:py-16 lg:grid-cols-2 lg:px-8 lg:py-24">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold text-accent-foreground">
             Rental Mobil Wonogiri • Lepas Kunci & Dengan Sopir

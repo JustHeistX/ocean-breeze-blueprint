@@ -99,7 +99,7 @@ export function BookingSection({ cars, selectedCarId, onSelectCarId }: BookingSe
   const whatsappUrl = `https://wa.me/${DEFAULT_PHONE}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <section id="pesan" className="bg-background py-16 lg:py-24">
+    <section id="pesan" className="bg-background py-10 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold text-accent-foreground">
@@ -115,15 +115,15 @@ export function BookingSection({ cars, selectedCarId, onSelectCarId }: BookingSe
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:items-start">
+        <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-8 lg:grid-cols-12 lg:items-start">
           {/* Form Controls */}
-          <Card className="rounded-[24px] border border-border bg-card p-6 shadow-sm lg:col-span-7 lg:p-8">
+          <Card className="rounded-[24px] border border-border bg-card p-5 sm:p-6 shadow-sm lg:col-span-7 lg:p-8">
             <h3 className="flex items-center gap-2 text-xl font-bold text-primary">
               <CarIcon className="size-5 text-secondary" />
               Detail Pemesanan
             </h3>
 
-            <div className="mt-6 space-y-6">
+            <div className="mt-6 space-y-5 sm:space-y-6">
               {/* Select Vehicle */}
               <div>
                 <Label htmlFor={carSelectId} className="text-sm font-semibold text-foreground">
@@ -133,12 +133,12 @@ export function BookingSection({ cars, selectedCarId, onSelectCarId }: BookingSe
                   id={carSelectId}
                   value={activeCarId}
                   onChange={(e) => handleCarChange(e.target.value)}
-                  className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-medium text-foreground transition-colors focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
+                  className="mt-2 w-full rounded-xl border border-border bg-background px-3.5 py-3 text-sm font-medium text-foreground transition-colors focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/20"
                 >
                   {cars.map((car) => (
                     <option key={car.id} value={car.id}>
-                      {car.name} — {rupiah(car.price_per_day)}/hari{" "}
-                      {!car.availability_status ? "(Tidak Tersedia)" : ""}
+                      {car.name} ({rupiah(car.price_per_day)}/hari)
+                      {!car.availability_status ? " - Tidak Tersedia" : ""}
                     </option>
                   ))}
                 </select>
